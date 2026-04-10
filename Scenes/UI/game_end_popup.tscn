@@ -1,0 +1,121 @@
+[gd_scene load_steps=7 format=3 uid="uid://dnd1qpkin2mo"]
+
+[ext_resource type="Script" uid="uid://pnv2o0r5oo1e" path="res://Scripts/UI/GameEndPopup.cs" id="1_2vws6"]
+[ext_resource type="Texture2D" uid="uid://bkwhqvgvhwxi4" path="res://Assets/Menus/gameEndPopup.png" id="1_4uqh0"]
+[ext_resource type="FontFile" uid="uid://cdgsd7jdejemk" path="res://Assets/Fonts/mainFont.ttf" id="2_u2gll"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_u2gll"]
+texture = ExtResource("1_4uqh0")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2vws6"]
+bg_color = Color(0.792157, 0.72549, 0.6, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.701961, 0.588235, 0.431373, 1)
+corner_radius_top_left = 1
+corner_radius_top_right = 1
+corner_radius_bottom_right = 1
+corner_radius_bottom_left = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u2gll"]
+bg_color = Color(0.792157, 0.72549, 0.6, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.701961, 0.588235, 0.431373, 1)
+corner_radius_top_left = 1
+corner_radius_top_right = 1
+corner_radius_bottom_right = 1
+corner_radius_bottom_left = 1
+
+[node name="GameEndPopup" type="CanvasLayer"]
+layer = 6
+script = ExtResource("1_2vws6")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -360.0
+offset_top = -360.0
+offset_right = 360.0
+offset_bottom = 360.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_u2gll")
+
+[node name="WhoWonLabel" type="Label" parent="Control/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.25
+anchor_right = 0.5
+anchor_bottom = 0.25
+offset_left = -50.5
+offset_right = 50.5
+offset_bottom = 42.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.239216, 0.168627, 0.121569, 1)
+theme_override_fonts/font = ExtResource("2_u2gll")
+theme_override_font_sizes/font_size = 40
+horizontal_alignment = 1
+
+[node name="ConclusionTypeLabel" type="Label" parent="Control/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.35
+anchor_right = 0.5
+anchor_bottom = 0.4
+offset_left = -184.5
+offset_right = 184.5
+offset_bottom = 42.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.239216, 0.168627, 0.121569, 1)
+theme_override_fonts/font = ExtResource("2_u2gll")
+theme_override_font_sizes/font_size = 40
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.6
+anchor_right = 0.5
+anchor_bottom = 0.65
+offset_left = -48.0
+offset_top = -40.0
+offset_right = 48.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="MainMenuButton" type="Button" parent="Control/Panel/VBoxContainer"]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+theme_override_colors/font_disabled_color = Color(0.239216, 0.168627, 0.121569, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.239216, 0.168627, 0.121569, 1)
+theme_override_colors/font_hover_color = Color(0.239216, 0.168627, 0.121569, 1)
+theme_override_colors/font_outline_color = Color(0.239216, 0.168627, 0.121569, 1)
+theme_override_colors/font_color = Color(0.239216, 0.168627, 0.121569, 1)
+theme_override_colors/font_focus_color = Color(0.239216, 0.168627, 0.121569, 1)
+theme_override_colors/font_pressed_color = Color(0.239216, 0.168627, 0.121569, 1)
+theme_override_fonts/font = ExtResource("2_u2gll")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = SubResource("StyleBoxFlat_2vws6")
+theme_override_styles/normal = SubResource("StyleBoxFlat_u2gll")
+text = "Main Menu
+"

@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://bx8bwsgljsh7n"]
+
+[ext_resource type="Script" uid="uid://btyfgp1grtij2" path="res://Scripts/UI/Special Icons/PortalIcon.cs" id="2_atpiw"]
+[ext_resource type="Texture2D" uid="uid://c3hj5hc1e57l0" path="res://Assets/2D/Special Icons/portal_icon.png" id="2_n8t5h"]
+
+[node name="PortalIcon" type="TextureRect"]
+physics_interpolation_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+tooltip_text = "Open Portal"
+mouse_filter = 0
+texture = ExtResource("2_n8t5h")
+script = ExtResource("2_atpiw")
+metadata/_custom_type_script = "uid://dohdt0a5h2jti"

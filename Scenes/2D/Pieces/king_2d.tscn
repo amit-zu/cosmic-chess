@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://exft7y7irtqn"]
+
+[ext_resource type="Script" uid="uid://7mb7ykqmcbc2" path="res://Scripts/2D/Pieces/King.cs" id="1_n8leh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_js8hc"]
+size = Vector2(12, 13)
+
+[node name="King" type="Area2D"]
+z_index = 1
+script = ExtResource("1_n8leh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_js8hc")

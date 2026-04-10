@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://rmks67ow6wcd"]
+
+[ext_resource type="Script" uid="uid://dwpdk063hiwdg" path="res://Scripts/2D/Square.cs" id="1_f46fl"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_s8t5h"]
+radius = 6.75
+
+[node name="Square" type="StaticBody2D"]
+script = ExtResource("1_f46fl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_s8t5h")
+
+[node name="Marking" type="ColorRect" parent="."]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -7.0
+offset_top = -7.0
+offset_right = 7.0
+offset_bottom = 7.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 0.4, 0.4, 0.588235)

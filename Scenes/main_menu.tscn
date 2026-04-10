@@ -1,0 +1,145 @@
+[gd_scene load_steps=14 format=3 uid="uid://dyowd71iq76p1"]
+
+[ext_resource type="Texture2D" uid="uid://b4808o1gb22co" path="res://Assets/Backgrounds/cosmicChessMainMenuBg.png" id="1_28flt"]
+[ext_resource type="Script" uid="uid://cb8pl51aereea" path="res://Scripts/UI/MainMenu.cs" id="1_opfnp"]
+[ext_resource type="Texture2D" uid="uid://bkwd1kosvtsqw" path="res://Assets/Buttons/settingsIcon.png" id="2_1ehe0"]
+[ext_resource type="FontFile" uid="uid://bsbq52lxvu68g" path="res://Assets/Fonts/mainMenuLogoFontHonk.ttf" id="2_48xlc"]
+[ext_resource type="Texture2D" uid="uid://bhc5ro66e7cne" path="res://Assets/Buttons/compassIcon.png" id="2_ce3w2"]
+[ext_resource type="Texture2D" uid="uid://cce3lm0dm4cjs" path="res://Assets/Buttons/knightIcon.png" id="2_n45e2"]
+[ext_resource type="PackedScene" uid="uid://c4c0prjwkikpn" path="res://Scenes/UI/settings_popup.tscn" id="7_cp0ys"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_48xlc"]
+texture = ExtResource("1_28flt")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1ehe0"]
+bg_color = Color(1, 1, 1, 0.156863)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ce3w2"]
+bg_color = Color(1, 1, 1, 0.156863)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n45e2"]
+bg_color = Color(1, 1, 1, 0.156863)
+
+[sub_resource type="LabelSettings" id="LabelSettings_28flt"]
+font = ExtResource("2_48xlc")
+font_size = 80
+font_color = Color(0.847059, 0.317647, 0.0862745, 1)
+outline_size = 5
+shadow_size = 0
+
+[sub_resource type="Theme" id="Theme_n45e2"]
+default_font_size = 24
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_opfnp")
+
+[node name="Background" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1, 0.984386)
+theme_override_styles/panel = SubResource("StyleBoxTexture_48xlc")
+
+[node name="ButtonsContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -150.0
+offset_right = 200.0
+offset_bottom = 250.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PlayButton" type="Button" parent="ButtonsContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+focus_mode = 0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_styles/normal = SubResource("StyleBoxFlat_1ehe0")
+text = "Play"
+icon = ExtResource("2_n45e2")
+expand_icon = true
+
+[node name="LearnButton" type="Button" parent="ButtonsContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+focus_mode = 0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_styles/normal = SubResource("StyleBoxFlat_ce3w2")
+text = "Learn
+"
+icon = ExtResource("2_ce3w2")
+expand_icon = true
+
+[node name="SettingsButton" type="Button" parent="ButtonsContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+focus_mode = 0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_styles/normal = SubResource("StyleBoxFlat_n45e2")
+text = "Settings
+"
+icon = ExtResource("2_1ehe0")
+expand_icon = true
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -200.0
+offset_right = 200.0
+offset_bottom = 200.0
+grow_horizontal = 2
+text = "Cosmic Chess"
+label_settings = SubResource("LabelSettings_28flt")
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="VariantSelect" type="OptionButton" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.05
+anchor_top = 0.5
+anchor_right = 0.25
+anchor_bottom = 0.557
+offset_top = -150.0
+offset_bottom = -100.0
+grow_vertical = 2
+scale = Vector2(0.998707, 0.972202)
+tooltip_text = "Variant Selector"
+focus_mode = 0
+theme = SubResource("Theme_n45e2")
+alignment = 1
+selected = 0
+item_count = 3
+popup/item_0/text = "Standard Chess"
+popup/item_0/id = 0
+popup/item_1/text = "Magic Chess"
+popup/item_1/id = 1
+popup/item_2/text = "Future Chess"
+popup/item_2/id = 2
+
+[node name="SettingsPopup" parent="." instance=ExtResource("7_cp0ys")]
+visible = false
+
+[connection signal="button_down" from="ButtonsContainer/PlayButton" to="." method="OnPlayButtonPressed"]
+[connection signal="button_down" from="ButtonsContainer/LearnButton" to="." method="OnLearnButtonPressed"]
+[connection signal="button_down" from="ButtonsContainer/SettingsButton" to="." method="OnSettingsButtonPressed"]

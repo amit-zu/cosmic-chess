@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://c4srqqeec2e28"]
+
+[ext_resource type="Script" uid="uid://cyaeqfa00kn1e" path="res://Scripts/2D/Pieces/Bishop.cs" id="1_ok3nn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b4amc"]
+size = Vector2(12, 14)
+
+[node name="Bishop" type="Area2D"]
+script = ExtResource("1_ok3nn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_b4amc")

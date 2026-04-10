@@ -1,0 +1,39 @@
+[gd_scene load_steps=4 format=3 uid="uid://carrerpejvv81"]
+
+[ext_resource type="Script" uid="uid://byo7jwicy6c6e" path="res://Scripts/2D/BoardEdge.cs" id="1_j5l0y"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_j5l0y"]
+radius = 5.0
+height = 16.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tt77c"]
+bg_color = Color(1, 0.4, 0.4, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_blend = true
+
+[node name="BoardEdge" type="Area2D"]
+z_index = -5
+script = ExtResource("1_j5l0y")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_j5l0y")
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -2.0
+offset_top = -7.0
+offset_right = 2.0
+offset_bottom = 7.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_tt77c")
+
+[connection signal="mouse_entered" from="." to="." method="OnMouseEntered"]
+[connection signal="mouse_exited" from="." to="." method="OnMouseExited"]

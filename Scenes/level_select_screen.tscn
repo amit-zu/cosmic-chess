@@ -1,0 +1,60 @@
+[gd_scene load_steps=3 format=3 uid="uid://dn6guv83tewno"]
+
+[ext_resource type="PackedScene" uid="uid://bp1erxw6jnhqe" path="res://Scenes/UI/level_node.tscn" id="1_cmltv"]
+[ext_resource type="Script" uid="uid://du2dlnccjssmb" path="res://Scripts/UI/LevelSelectScreen.cs" id="1_friyl"]
+
+[node name="LevelSelectScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_friyl")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+custom_minimum_size = Vector2(500, 500)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+vertical_scroll_mode = 2
+
+[node name="Control" type="Control" parent="ScrollContainer"]
+custom_minimum_size = Vector2(500, 1500)
+layout_mode = 2
+
+[node name="LevelNode" parent="ScrollContainer/Control" instance=ExtResource("1_cmltv")]
+layout_mode = 2
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 353.0
+offset_top = 158.0
+offset_right = 503.0
+offset_bottom = 308.0
+text = "Level 1"
+
+[node name="LevelNode2" parent="ScrollContainer/Control" instance=ExtResource("1_cmltv")]
+layout_mode = 1
+offset_left = 70.0
+offset_top = -47.0
+offset_right = 220.0
+offset_bottom = 103.0
+text = "Level 2"
+
+[node name="LevelNode3" parent="ScrollContainer/Control" instance=ExtResource("1_cmltv")]
+layout_mode = 1
+offset_left = -34.0
+offset_top = 533.0
+offset_right = 116.0
+offset_bottom = 683.0
+text = "Level 3"
+
+[connection signal="button_down" from="ScrollContainer/Control/LevelNode" to="." method="GoToLevel1"]
+[connection signal="button_down" from="ScrollContainer/Control/LevelNode2" to="." method="GoToLevel2"]
+[connection signal="button_down" from="ScrollContainer/Control/LevelNode3" to="." method="GoToLevel3"]

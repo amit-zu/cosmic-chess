@@ -1,0 +1,36 @@
+[gd_scene load_steps=3 format=3 uid="uid://bp1erxw6jnhqe"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dys2h"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 75
+corner_radius_top_right = 75
+corner_radius_bottom_right = 75
+corner_radius_bottom_left = 75
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pxt0j"]
+bg_color = Color(0.478431, 0.478431, 0.478431, 1)
+corner_radius_top_left = 75
+corner_radius_top_right = 75
+corner_radius_bottom_right = 75
+corner_radius_bottom_left = 75
+
+[node name="LevelNode" type="Button"]
+custom_minimum_size = Vector2(150, 150)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -66.5
+offset_top = -38.5
+offset_right = 66.5
+offset_bottom = 38.5
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 0
+theme_override_font_sizes/font_size = 30
+theme_override_styles/disabled = SubResource("StyleBoxFlat_dys2h")
+theme_override_styles/hover = SubResource("StyleBoxFlat_dys2h")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_pxt0j")
+theme_override_styles/normal = SubResource("StyleBoxFlat_dys2h")
+text = "Level"

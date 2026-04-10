@@ -1,0 +1,642 @@
+[gd_scene load_steps=5 format=3 uid="uid://yyfp8amxmbau"]
+
+[ext_resource type="Script" uid="uid://bclh5kjc5veks" path="res://Scripts/2D/Board.cs" id="1_pnskf"]
+[ext_resource type="Texture2D" uid="uid://ci51xufbc0gbr" path="res://Assets/2D/Boards/Type 2/chessBoard1.png" id="2_wdm8j"]
+[ext_resource type="PackedScene" uid="uid://rmks67ow6wcd" path="res://Scenes/2D/square.tscn" id="3_b6blq"]
+[ext_resource type="PackedScene" uid="uid://carrerpejvv81" path="res://Scenes/2D/board_edge.tscn" id="4_qpw37"]
+
+[node name="Board" type="Node2D"]
+script = ExtResource("1_pnskf")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -1
+rotation = 1.5708
+texture = ExtResource("2_wdm8j")
+
+[node name="Squares" type="Node" parent="."]
+
+[node name="a1" parent="Squares" node_paths=PackedStringArray("board") instance=ExtResource("3_b6blq")]
+position = Vector2(-56, 56)
+board = NodePath("../..")
+file = 1
+rank = 1
+
+[node name="a2" parent="Squares" node_paths=PackedStringArray("board") instance=ExtResource("3_b6blq")]
+position = Vector2(-56, 40)
+board = NodePath("../..")
+file = 1
+rank = 2
+
+[node name="a3" parent="Squares" node_paths=PackedStringArray("board") instance=ExtResource("3_b6blq")]
+position = Vector2(-56, 24)
+board = NodePath("../..")
+file = 1
+rank = 3
+
+[node name="a4" parent="Squares" node_paths=PackedStringArray("board") instance=ExtResource("3_b6blq")]
+position = Vector2(-56, 8)
+board = NodePath("../..")
+file = 1
+rank = 4
+
+[node name="a5" parent="Squares" node_paths=PackedStringArray("board") instance=ExtResource("3_b6blq")]
+position = Vector2(-56, -8)
+board = NodePath("../..")
+file = 1
+rank = 5
+
+[node name="a6" parent="Squares" node_paths=PackedStringArray("board") instance=ExtResource("3_b6blq")]
+position = Vector2(-56, -24)
+board = NodePath("../..")
+file = 1
+rank = 6
+
+[node name="a7" parent="Squares" node_paths=PackedStringArray("board") instance=ExtResource("3_b6blq")]
+position = Vector2(-56, -40)
+board = NodePath("../..")
+file = 1
+rank = 7
+
+[node name="a8" parent="Squares" node_paths=PackedStringArray("board") instance=ExtResource("3_b6blq")]
+position = Vector2(-56, -56)
+board = NodePath("../..")
+file = 1
+rank = 8
+
+[node name="b1" parent="Squares" node_paths=PackedStringArray("board") instance=ExtResource("3_b6blq")]
+position = Vector2(-40, 56)
+board = NodePath("../..")
+file = 2
+rank = 1
+
+[node name="b2" parent="Squares" node_paths=PackedStringArray("board") instance=ExtResource("3_b6blq")]
+position = Vector2(-40, 40)
+board = NodePath("../..")
+file = 2
+rank = 2
+
+[node name="b3" parent="Squares" node_paths=PackedStringArray("board") instance=ExtResource("3_b6blq")]
+position = Vector2(-40, 24)
+board = NodePath("../..")
+file = 2
+rank = 3
+
+[node name="b4" parent="Squares" node_paths=PackedStringArray("board") instance=ExtResource("3_b6blq")]
+position = Vector2(-40, 8)
+board = NodePath("../..")
+file = 2
+rank = 4
+
+[node name="b5" parent="Squares" node_paths=PackedStringArray("board") instance=ExtResource("3_b6blq")]
+position = Vector2(-40, -8)
+board = NodePath("../..")
+file = 2
+rank = 5
+
+[node name="b6" parent="Squares" node_paths=PackedStringArray("board") instance=ExtResource("3_b6blq")]
+position = Vector2(-40, -24)
+board = NodePath("../..")
+file = 2
+rank = 6
+
+[node name="b7" parent="Squares" node_paths=PackedStringArray("board") instance=ExtResource("3_b6blq")]
+position = Vector2(-40, -40)
+board = NodePath("../..")
+file = 2
+rank = 7
+
+[node name="b8" parent="Squares" node_paths=PackedStringArray("board") instance=ExtResource("3_b6blq")]
+position = Vector2(-40, -56)
+board = NodePath("../..")
+file = 2
+rank = 8
+
+[node name="c1" parent="Squares" node_paths=PackedStringArray("board") instance=ExtResource("3_b6blq")]
+position = Vector2(-24, 56)
+board = NodePath("../..")
+file = 3
+rank = 1
+
+[node name="c2" parent="Squares" node_paths=PackedStringArray("board") instance=ExtResource("3_b6blq")]
+position = Vector2(-24, 40)
+board = NodePath("../..")
+file = 3
+rank = 2
+
+[node name="c3" parent="Squares" node_paths=PackedStringArray("board") instance=ExtResource("3_b6blq")]
+position = Vector2(-24, 24)
+board = NodePath("../..")
+file = 3
+rank = 3
+
+[node name="c4" parent="Squares" node_paths=PackedStringArray("board") instance=ExtResource("3_b6blq")]
+position = Vector2(-24, 8)
+board = NodePath("../..")
+file = 3
+rank = 4
+
+[node name="c5" parent="Squares" node_paths=PackedStringArray("board") instance=ExtResource("3_b6blq")]
+position = Vector2(-24, -8)
+board = NodePath("../..")
+file = 3
+rank = 5
+
+[node name="c6" parent="Squares" node_paths=PackedStringArray("board") instance=ExtResource("3_b6blq")]
+position = Vector2(-24, -24)
+board = NodePath("../..")
+file = 3
+rank = 6
+
+[node name="c7" parent="Squares" node_paths=PackedStringArray("board") instance=ExtResource("3_b6blq")]
+position = Vector2(-24, -40)
+board = NodePath("../..")
+file = 3
+rank = 7
+
+[node name="c8" parent="Squares" node_paths=PackedStringArray("board") instance=ExtResource("3_b6blq")]
+position = Vector2(-24, -56)
+board = NodePath("../..")
+file = 3
+rank = 8
+
+[node name="d1" parent="Squares" node_paths=PackedStringArray("board") instance=ExtResource("3_b6blq")]
+position = Vector2(-8, 56)
+board = NodePath("../..")
+file = 4
+rank = 1
+
+[node name="d2" parent="Squares" node_paths=PackedStringArray("board") instance=ExtResource("3_b6blq")]
+position = Vector2(-8, 40)
+board = NodePath("../..")
+file = 4
+rank = 2
+
+[node name="d3" parent="Squares" node_paths=PackedStringArray("board") instance=ExtResource("3_b6blq")]
+position = Vector2(-8, 24)
+board = NodePath("../..")
+file = 4
+rank = 3
+
+[node name="d4" parent="Squares" node_paths=PackedStringArray("board") instance=ExtResource("3_b6blq")]
+position = Vector2(-8, 8)
+board = NodePath("../..")
+file = 4
+rank = 4
+
+[node name="d5" parent="Squares" node_paths=PackedStringArray("board") instance=ExtResource("3_b6blq")]
+position = Vector2(-8, -8)
+board = NodePath("../..")
+file = 4
+rank = 5
+
+[node name="d6" parent="Squares" node_paths=PackedStringArray("board") instance=ExtResource("3_b6blq")]
+position = Vector2(-8, -24)
+board = NodePath("../..")
+file = 4
+rank = 6
+
+[node name="d7" parent="Squares" node_paths=PackedStringArray("board") instance=ExtResource("3_b6blq")]
+position = Vector2(-8, -40)
+board = NodePath("../..")
+file = 4
+rank = 7
+
+[node name="d8" parent="Squares" node_paths=PackedStringArray("board") instance=ExtResource("3_b6blq")]
+position = Vector2(-8, -56)
+board = NodePath("../..")
+file = 4
+rank = 8
+
+[node name="e1" parent="Squares" node_paths=PackedStringArray("board") instance=ExtResource("3_b6blq")]
+position = Vector2(8, 56)
+board = NodePath("../..")
+file = 5
+rank = 1
+
+[node name="e2" parent="Squares" node_paths=PackedStringArray("board") instance=ExtResource("3_b6blq")]
+position = Vector2(8, 40)
+board = NodePath("../..")
+file = 5
+rank = 2
+
+[node name="e3" parent="Squares" node_paths=PackedStringArray("board") instance=ExtResource("3_b6blq")]
+position = Vector2(8, 24)
+board = NodePath("../..")
+file = 5
+rank = 3
+
+[node name="e4" parent="Squares" node_paths=PackedStringArray("board") instance=ExtResource("3_b6blq")]
+position = Vector2(8, 8)
+board = NodePath("../..")
+file = 5
+rank = 4
+
+[node name="e5" parent="Squares" node_paths=PackedStringArray("board") instance=ExtResource("3_b6blq")]
+position = Vector2(8, -8)
+board = NodePath("../..")
+file = 5
+rank = 5
+
+[node name="e6" parent="Squares" node_paths=PackedStringArray("board") instance=ExtResource("3_b6blq")]
+position = Vector2(8, -24)
+board = NodePath("../..")
+file = 5
+rank = 6
+
+[node name="e7" parent="Squares" node_paths=PackedStringArray("board") instance=ExtResource("3_b6blq")]
+position = Vector2(8, -40)
+board = NodePath("../..")
+file = 5
+rank = 7
+
+[node name="e8" parent="Squares" node_paths=PackedStringArray("board") instance=ExtResource("3_b6blq")]
+position = Vector2(8, -56)
+board = NodePath("../..")
+file = 5
+rank = 8
+
+[node name="f1" parent="Squares" node_paths=PackedStringArray("board") instance=ExtResource("3_b6blq")]
+position = Vector2(24, 56)
+board = NodePath("../..")
+file = 6
+rank = 1
+
+[node name="f2" parent="Squares" node_paths=PackedStringArray("board") instance=ExtResource("3_b6blq")]
+position = Vector2(24, 40)
+board = NodePath("../..")
+file = 6
+rank = 2
+
+[node name="f3" parent="Squares" node_paths=PackedStringArray("board") instance=ExtResource("3_b6blq")]
+position = Vector2(24, 24)
+board = NodePath("../..")
+file = 6
+rank = 3
+
+[node name="f4" parent="Squares" node_paths=PackedStringArray("board") instance=ExtResource("3_b6blq")]
+position = Vector2(24, 8)
+board = NodePath("../..")
+file = 6
+rank = 4
+
+[node name="f5" parent="Squares" node_paths=PackedStringArray("board") instance=ExtResource("3_b6blq")]
+position = Vector2(24, -8)
+board = NodePath("../..")
+file = 6
+rank = 5
+
+[node name="f6" parent="Squares" node_paths=PackedStringArray("board") instance=ExtResource("3_b6blq")]
+position = Vector2(24, -24)
+board = NodePath("../..")
+file = 6
+rank = 6
+
+[node name="f7" parent="Squares" node_paths=PackedStringArray("board") instance=ExtResource("3_b6blq")]
+position = Vector2(24, -40)
+board = NodePath("../..")
+file = 6
+rank = 7
+
+[node name="f8" parent="Squares" node_paths=PackedStringArray("board") instance=ExtResource("3_b6blq")]
+position = Vector2(24, -56)
+board = NodePath("../..")
+file = 6
+rank = 8
+
+[node name="g1" parent="Squares" node_paths=PackedStringArray("board") instance=ExtResource("3_b6blq")]
+position = Vector2(40, 56)
+board = NodePath("../..")
+file = 7
+rank = 1
+
+[node name="g2" parent="Squares" node_paths=PackedStringArray("board") instance=ExtResource("3_b6blq")]
+position = Vector2(40, 40)
+board = NodePath("../..")
+file = 7
+rank = 2
+
+[node name="g3" parent="Squares" node_paths=PackedStringArray("board") instance=ExtResource("3_b6blq")]
+position = Vector2(40, 24)
+board = NodePath("../..")
+file = 7
+rank = 3
+
+[node name="g4" parent="Squares" node_paths=PackedStringArray("board") instance=ExtResource("3_b6blq")]
+position = Vector2(40, 8)
+board = NodePath("../..")
+file = 7
+rank = 4
+
+[node name="g5" parent="Squares" node_paths=PackedStringArray("board") instance=ExtResource("3_b6blq")]
+position = Vector2(40, -8)
+board = NodePath("../..")
+file = 7
+rank = 5
+
+[node name="g6" parent="Squares" node_paths=PackedStringArray("board") instance=ExtResource("3_b6blq")]
+position = Vector2(40, -24)
+board = NodePath("../..")
+file = 7
+rank = 6
+
+[node name="g7" parent="Squares" node_paths=PackedStringArray("board") instance=ExtResource("3_b6blq")]
+position = Vector2(40, -40)
+board = NodePath("../..")
+file = 7
+rank = 7
+
+[node name="g8" parent="Squares" node_paths=PackedStringArray("board") instance=ExtResource("3_b6blq")]
+position = Vector2(40, -56)
+board = NodePath("../..")
+file = 7
+rank = 8
+
+[node name="h1" parent="Squares" node_paths=PackedStringArray("board") instance=ExtResource("3_b6blq")]
+position = Vector2(56, 56)
+board = NodePath("../..")
+file = 8
+rank = 1
+
+[node name="h2" parent="Squares" node_paths=PackedStringArray("board") instance=ExtResource("3_b6blq")]
+position = Vector2(56, 40)
+board = NodePath("../..")
+file = 8
+rank = 2
+
+[node name="h3" parent="Squares" node_paths=PackedStringArray("board") instance=ExtResource("3_b6blq")]
+position = Vector2(56, 24)
+board = NodePath("../..")
+file = 8
+rank = 3
+
+[node name="h4" parent="Squares" node_paths=PackedStringArray("board") instance=ExtResource("3_b6blq")]
+position = Vector2(56, 8)
+board = NodePath("../..")
+file = 8
+rank = 4
+
+[node name="h5" parent="Squares" node_paths=PackedStringArray("board") instance=ExtResource("3_b6blq")]
+position = Vector2(56, -8)
+board = NodePath("../..")
+file = 8
+rank = 5
+
+[node name="h6" parent="Squares" node_paths=PackedStringArray("board") instance=ExtResource("3_b6blq")]
+position = Vector2(56, -24)
+board = NodePath("../..")
+file = 8
+rank = 6
+
+[node name="h7" parent="Squares" node_paths=PackedStringArray("board") instance=ExtResource("3_b6blq")]
+position = Vector2(56, -40)
+board = NodePath("../..")
+file = 8
+rank = 7
+
+[node name="h8" parent="Squares" node_paths=PackedStringArray("board") instance=ExtResource("3_b6blq")]
+position = Vector2(56, -56)
+board = NodePath("../..")
+file = 8
+rank = 8
+
+[node name="Edges" type="Node" parent="."]
+
+[node name="a1left" parent="Edges" node_paths=PackedStringArray("board") instance=ExtResource("4_qpw37")]
+position = Vector2(-70, 56)
+board = NodePath("../..")
+file = 1
+rank = 1
+direction = 2
+
+[node name="a2" parent="Edges" node_paths=PackedStringArray("board") instance=ExtResource("4_qpw37")]
+position = Vector2(-70, 40)
+board = NodePath("../..")
+file = 1
+rank = 2
+direction = 2
+
+[node name="a3" parent="Edges" node_paths=PackedStringArray("board") instance=ExtResource("4_qpw37")]
+position = Vector2(-70, 24)
+board = NodePath("../..")
+file = 1
+rank = 3
+direction = 2
+
+[node name="a4" parent="Edges" node_paths=PackedStringArray("board") instance=ExtResource("4_qpw37")]
+position = Vector2(-70, 8)
+board = NodePath("../..")
+file = 1
+rank = 4
+direction = 2
+
+[node name="a5" parent="Edges" node_paths=PackedStringArray("board") instance=ExtResource("4_qpw37")]
+position = Vector2(-70, -8)
+board = NodePath("../..")
+file = 1
+rank = 5
+direction = 2
+
+[node name="a6" parent="Edges" node_paths=PackedStringArray("board") instance=ExtResource("4_qpw37")]
+position = Vector2(-70, -24)
+board = NodePath("../..")
+file = 1
+rank = 6
+direction = 2
+
+[node name="a7" parent="Edges" node_paths=PackedStringArray("board") instance=ExtResource("4_qpw37")]
+position = Vector2(-70, -40)
+board = NodePath("../..")
+file = 1
+rank = 7
+direction = 2
+
+[node name="a8left" parent="Edges" node_paths=PackedStringArray("board") instance=ExtResource("4_qpw37")]
+position = Vector2(-70, -56)
+board = NodePath("../..")
+file = 1
+rank = 8
+direction = 2
+
+[node name="a8top" parent="Edges" node_paths=PackedStringArray("board") instance=ExtResource("4_qpw37")]
+position = Vector2(-56, -70)
+rotation = 1.5708
+board = NodePath("../..")
+file = 1
+rank = 8
+
+[node name="b8" parent="Edges" node_paths=PackedStringArray("board") instance=ExtResource("4_qpw37")]
+position = Vector2(-40, -70)
+rotation = 1.5708
+board = NodePath("../..")
+file = 2
+rank = 8
+
+[node name="c8" parent="Edges" node_paths=PackedStringArray("board") instance=ExtResource("4_qpw37")]
+position = Vector2(-24, -70)
+rotation = 1.5708
+board = NodePath("../..")
+file = 3
+rank = 8
+
+[node name="d8" parent="Edges" node_paths=PackedStringArray("board") instance=ExtResource("4_qpw37")]
+position = Vector2(-8, -70)
+rotation = 1.5708
+board = NodePath("../..")
+file = 4
+rank = 8
+
+[node name="e8" parent="Edges" node_paths=PackedStringArray("board") instance=ExtResource("4_qpw37")]
+position = Vector2(8, -70)
+rotation = 1.5708
+board = NodePath("../..")
+file = 5
+rank = 8
+
+[node name="f8" parent="Edges" node_paths=PackedStringArray("board") instance=ExtResource("4_qpw37")]
+position = Vector2(24, -70)
+rotation = 1.5708
+board = NodePath("../..")
+file = 6
+rank = 8
+
+[node name="g8" parent="Edges" node_paths=PackedStringArray("board") instance=ExtResource("4_qpw37")]
+position = Vector2(40, -70)
+rotation = 1.5708
+board = NodePath("../..")
+file = 7
+rank = 8
+
+[node name="h8top" parent="Edges" node_paths=PackedStringArray("board") instance=ExtResource("4_qpw37")]
+position = Vector2(56, -70)
+rotation = 1.5708
+board = NodePath("../..")
+file = 8
+rank = 8
+
+[node name="h8right" parent="Edges" node_paths=PackedStringArray("board") instance=ExtResource("4_qpw37")]
+position = Vector2(70, -56)
+rotation = 3.14159
+board = NodePath("../..")
+file = 8
+rank = 8
+direction = 3
+
+[node name="h7" parent="Edges" node_paths=PackedStringArray("board") instance=ExtResource("4_qpw37")]
+position = Vector2(70, -40)
+rotation = 3.14159
+board = NodePath("../..")
+file = 8
+rank = 7
+direction = 3
+
+[node name="h6" parent="Edges" node_paths=PackedStringArray("board") instance=ExtResource("4_qpw37")]
+position = Vector2(70, -24)
+rotation = 3.14159
+board = NodePath("../..")
+file = 8
+rank = 6
+direction = 3
+
+[node name="h5" parent="Edges" node_paths=PackedStringArray("board") instance=ExtResource("4_qpw37")]
+position = Vector2(70, -8)
+rotation = 3.14159
+board = NodePath("../..")
+file = 8
+rank = 5
+direction = 3
+
+[node name="h4" parent="Edges" node_paths=PackedStringArray("board") instance=ExtResource("4_qpw37")]
+position = Vector2(70, 8)
+rotation = 3.14159
+board = NodePath("../..")
+file = 8
+rank = 4
+direction = 3
+
+[node name="h3" parent="Edges" node_paths=PackedStringArray("board") instance=ExtResource("4_qpw37")]
+position = Vector2(70, 24)
+rotation = 3.14159
+board = NodePath("../..")
+file = 8
+rank = 3
+direction = 3
+
+[node name="h2" parent="Edges" node_paths=PackedStringArray("board") instance=ExtResource("4_qpw37")]
+position = Vector2(70, 40)
+rotation = 3.14159
+board = NodePath("../..")
+file = 8
+rank = 2
+direction = 3
+
+[node name="h1right" parent="Edges" node_paths=PackedStringArray("board") instance=ExtResource("4_qpw37")]
+position = Vector2(70, 56)
+rotation = 3.14159
+board = NodePath("../..")
+file = 8
+rank = 1
+direction = 3
+
+[node name="h1bottom" parent="Edges" node_paths=PackedStringArray("board") instance=ExtResource("4_qpw37")]
+position = Vector2(56, 70)
+rotation = 4.71239
+board = NodePath("../..")
+file = 8
+rank = 1
+direction = 1
+
+[node name="g1" parent="Edges" node_paths=PackedStringArray("board") instance=ExtResource("4_qpw37")]
+position = Vector2(40, 70)
+rotation = 4.71239
+board = NodePath("../..")
+file = 7
+rank = 1
+direction = 1
+
+[node name="f1" parent="Edges" node_paths=PackedStringArray("board") instance=ExtResource("4_qpw37")]
+position = Vector2(24, 70)
+rotation = 4.71239
+board = NodePath("../..")
+file = 6
+rank = 1
+direction = 1
+
+[node name="e1" parent="Edges" node_paths=PackedStringArray("board") instance=ExtResource("4_qpw37")]
+position = Vector2(8, 70)
+rotation = 4.71239
+board = NodePath("../..")
+file = 5
+rank = 1
+direction = 1
+
+[node name="d1" parent="Edges" node_paths=PackedStringArray("board") instance=ExtResource("4_qpw37")]
+position = Vector2(-8, 70)
+rotation = 4.71239
+board = NodePath("../..")
+file = 4
+rank = 1
+direction = 1
+
+[node name="c1" parent="Edges" node_paths=PackedStringArray("board") instance=ExtResource("4_qpw37")]
+position = Vector2(-24, 70)
+rotation = 4.71239
+board = NodePath("../..")
+file = 3
+rank = 1
+direction = 1
+
+[node name="b1" parent="Edges" node_paths=PackedStringArray("board") instance=ExtResource("4_qpw37")]
+position = Vector2(-40, 70)
+rotation = 4.71239
+board = NodePath("../..")
+file = 2
+rank = 1
+direction = 1
+
+[node name="a1bottom" parent="Edges" node_paths=PackedStringArray("board") instance=ExtResource("4_qpw37")]
+position = Vector2(-56, 70)
+rotation = 4.71239
+board = NodePath("../..")
+file = 1
+rank = 1
+direction = 1

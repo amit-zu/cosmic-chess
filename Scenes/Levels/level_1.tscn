@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://dda4vdvt4rmm4"]
+
+[ext_resource type="PackedScene" uid="uid://dnpefk7mo8lcj" path="res://Scenes/Levels/level.tscn" id="1_tlcug"]
+[ext_resource type="Script" uid="uid://7gf8xl0volu0" path="res://Scripts/Levels/Level1.cs" id="2_4dpyx"]
+
+[node name="Level1" instance=ExtResource("1_tlcug")]
+script = ExtResource("2_4dpyx")
+EloLevel = 600
+GoalDescription = "Push your pawn to the edge of the board and promote it!"
+
+[node name="Game" parent="." index="0"]
+InitialFenString = "8/k7/8/8/8/8/6KP/8 w - - 0 1"
+
+[connection signal="ChangeActionAvailability" from="Game" to="." method="ChangeActionAvailability"]

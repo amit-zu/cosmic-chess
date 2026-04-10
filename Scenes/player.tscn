@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://cf05idqrh8iht"]
+
+[ext_resource type="Script" uid="uid://70a76j7nbheb" path="res://Scripts/Game/Player.cs" id="1_bsaf4"]
+
+[node name="Player" type="Node"]
+script = ExtResource("1_bsaf4")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 120.0
+one_shot = true
+autostart = true
+ignore_time_scale = true

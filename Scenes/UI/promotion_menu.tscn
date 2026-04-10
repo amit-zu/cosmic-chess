@@ -1,0 +1,76 @@
+[gd_scene load_steps=10 format=3 uid="uid://5m5xiiu7v7tx"]
+
+[ext_resource type="Script" uid="uid://bfmub2124n58o" path="res://Scripts/UI/PromotionMenu.cs" id="1_hev74"]
+[ext_resource type="Texture2D" uid="uid://ds87ly8aixq6e" path="res://Assets/Menus/promotionPanel.png" id="1_rg7ea"]
+[ext_resource type="Texture2D" uid="uid://cvqrcbj4wdmye" path="res://Assets/Buttons/rightButton.png" id="2_i1q72"]
+[ext_resource type="Texture2D" uid="uid://bvm2k827jpw83" path="res://Assets/Buttons/leftButton.png" id="3_i1li6"]
+
+[sub_resource type="Theme" id="Theme_bt08p"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qqnsx"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+
+[sub_resource type="Theme" id="Theme_caqrl"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_k1p03"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1d4rh"]
+size = Vector2(10, 14)
+
+[node name="PromotionMenu" type="Node2D"]
+z_index = 10
+script = ExtResource("1_hev74")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+z_index = 5
+offset_left = -14.0
+offset_top = -11.0
+offset_right = 14.0
+offset_bottom = 15.0
+texture = ExtResource("1_rg7ea")
+expand_mode = 1
+
+[node name="RightButton" type="Button" parent="TextureRect"]
+z_index = 5
+layout_mode = 0
+offset_left = 21.0
+offset_top = 7.0
+offset_right = 91.0
+offset_bottom = 87.0
+scale = Vector2(0.12, 0.12)
+theme = SubResource("Theme_bt08p")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_qqnsx")
+action_mode = 0
+icon = ExtResource("2_i1q72")
+flat = true
+
+[node name="LeftButton" type="Button" parent="TextureRect"]
+z_index = 5
+layout_mode = 0
+offset_top = 7.0
+offset_right = 80.0
+offset_bottom = 87.0
+scale = Vector2(0.12, 0.12)
+theme = SubResource("Theme_caqrl")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_k1p03")
+icon = ExtResource("3_i1li6")
+flat = true
+
+[node name="ChoosePieceArea" type="Area2D" parent="TextureRect"]
+z_index = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TextureRect/ChoosePieceArea"]
+z_index = 5
+position = Vector2(14, 11)
+shape = SubResource("RectangleShape2D_1d4rh")
+
+[connection signal="pressed" from="TextureRect/RightButton" to="." method="NextPiece"]
+[connection signal="pressed" from="TextureRect/LeftButton" to="." method="PreviouspPiece"]
+[connection signal="input_event" from="TextureRect/ChoosePieceArea" to="." method="Promote"]

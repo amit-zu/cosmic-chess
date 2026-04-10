@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://cr02q5dk0g8rp"]
+
+[ext_resource type="Script" uid="uid://b23gmgtpotktb" path="res://Scripts/2D/Special/Wall.cs" id="1_jvlxr"]
+[ext_resource type="Texture2D" uid="uid://bhidls7fswy5q" path="res://Assets/2D/Special Sprites/Walls/brick_wall_side.png" id="2_jvlxr"]
+
+[node name="Wall" type="Area2D"]
+script = ExtResource("1_jvlxr")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.02, 0.02)
+texture = ExtResource("2_jvlxr")

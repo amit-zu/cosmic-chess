@@ -1,0 +1,144 @@
+[gd_scene load_steps=4 format=3 uid="uid://c4c0prjwkikpn"]
+
+[ext_resource type="Script" uid="uid://cyt0f8q1dk74f" path="res://Scripts/UI/SettingsPopup.cs" id="1_nyh60"]
+[ext_resource type="FontFile" uid="uid://bsbq52lxvu68g" path="res://Assets/Fonts/mainMenuLogoFontHonk.ttf" id="2_0hapa"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nyh60"]
+bg_color = Color(0.662745, 0.662745, 0.662745, 0.705882)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="SettingsPopup" type="PopupPanel"]
+size = Vector2i(500, 627)
+visible = true
+theme_override_styles/panel = SubResource("StyleBoxFlat_nyh60")
+script = ExtResource("1_nyh60")
+
+[node name="PopupControl" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 500.0
+offset_bottom = 627.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SettingsTabControl" type="TabContainer" parent="PopupControl"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.2
+anchor_right = 1.0
+anchor_bottom = 0.75
+grow_horizontal = 2
+grow_vertical = 2
+current_tab = 0
+clip_tabs = false
+
+[node name="Sound Settings" type="VBoxContainer" parent="PopupControl/SettingsTabControl"]
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="MasterVolumeLabel" type="RichTextLabel" parent="PopupControl/SettingsTabControl/Sound Settings"]
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 20
+text = "Master Volume"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="MasterVolumeSlider" type="HSlider" parent="PopupControl/SettingsTabControl/Sound Settings"]
+layout_mode = 2
+value = 40.0
+
+[node name="MusicVolumeLabel" type="RichTextLabel" parent="PopupControl/SettingsTabControl/Sound Settings"]
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 20
+text = "Music Volume"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="MusicVolumeSlider" type="HSlider" parent="PopupControl/SettingsTabControl/Sound Settings"]
+layout_mode = 2
+value = 40.0
+
+[node name="Video Settings" type="VBoxContainer" parent="PopupControl/SettingsTabControl"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="ViewModeLabel" type="RichTextLabel" parent="PopupControl/SettingsTabControl/Video Settings"]
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 20
+text = "View Mode"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="ViewModeSelect" type="OptionButton" parent="PopupControl/SettingsTabControl/Video Settings"]
+layout_mode = 2
+alignment = 1
+selected = 1
+item_count = 2
+popup/item_0/text = "Minimized"
+popup/item_0/id = 0
+popup/item_1/text = "Maximized"
+popup/item_1/id = 1
+
+[node name="GraphicsQualityLabel" type="RichTextLabel" parent="PopupControl/SettingsTabControl/Video Settings"]
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 20
+text = "Graphics Quality"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="GraphicsQualitySelect" type="OptionButton" parent="PopupControl/SettingsTabControl/Video Settings"]
+layout_mode = 2
+alignment = 1
+selected = 1
+item_count = 2
+popup/item_0/text = "Simple"
+popup/item_0/id = 0
+popup/item_1/text = "Fancy"
+popup/item_1/id = 1
+
+[node name="SettingsLabel" type="RichTextLabel" parent="PopupControl"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+grow_horizontal = 2
+theme_override_colors/default_color = Color(0.847059, 0.317647, 0.0862745, 1)
+theme_override_fonts/normal_font = ExtResource("2_0hapa")
+theme_override_font_sizes/normal_font_size = 60
+text = "Settings
+"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="CloseAndSaveButtons" type="HBoxContainer" parent="PopupControl"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.8
+anchor_right = 1.0
+anchor_bottom = 0.9
+grow_horizontal = 2
+grow_vertical = 0
+alignment = 1
+
+[node name="SaveButton" type="Button" parent="PopupControl/CloseAndSaveButtons"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 30
+text = "Save"
+
+[node name="CloseButton" type="Button" parent="PopupControl/CloseAndSaveButtons"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 30
+text = "Close"
