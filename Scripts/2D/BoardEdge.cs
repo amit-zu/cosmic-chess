@@ -42,7 +42,9 @@ public partial class BoardEdge : Area2D
 	{
 		if (GameManager.GameManagerInstance.CurrentActiveGame.PendingPlacements[1] == null)
 		{
-			if (GameManager.GameManagerInstance.CurrentActiveGame.PendingAction == ActionType.PORTAL_PLACEMENT)
+			if (GameManager.GameManagerInstance.CurrentActiveGame.PendingAction == ActionType.PORTAL_PLACEMENT
+			&& (GameManager.GameManagerInstance.CurrentActiveGame.PendingPlacements[0] == null)
+			|| (GameManager.GameManagerInstance.CurrentActiveGame.PendingPlacements[0] != null && !GameManager.GameManagerInstance.CurrentActiveGame.PendingPlacements[0].Equals(coordinate)))
 			{
 				EmitSignal(SignalName.OpenPortal, coordinate);
 			}
