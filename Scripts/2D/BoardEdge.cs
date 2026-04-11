@@ -7,7 +7,6 @@ public partial class BoardEdge : Area2D
 	public delegate void OpenPortalEventHandler(EdgeCoordinate edgeCoordinate);
 	[Signal]
 	public delegate void PlaceWallEventHandler(EdgeCoordinate edgeCoordinate);
-
 	[Export]
 	public Board board;
 	[Export]
@@ -40,7 +39,7 @@ public partial class BoardEdge : Area2D
 
 	public void OnClick()
 	{
-		if (GameManager.GameManagerInstance.CurrentActiveGame.PendingPlacements[1] == null)
+		if (GameManager.GameManagerInstance.CurrentActiveGame.PendingPlacements[1] == null && !IsOccupied())
 		{
 			if (GameManager.GameManagerInstance.CurrentActiveGame.PendingAction == ActionType.PORTAL_PLACEMENT
 			&& (GameManager.GameManagerInstance.CurrentActiveGame.PendingPlacements[0] == null)

@@ -140,20 +140,6 @@ public partial class MoveManager : Node
 		wall.Coordinate = edgeCoordinate;
 		Util.FindChild<GameScreen>(GetTree().Root).AddChild(wall);
 
-		if (boardEdge.IsOccupied())
-		{
-			BoardEdgeItem boardEdgeItem = boardEdge.GetOccupyingItem();
-			BoardEdgeItem connectedEdgeItem = boardEdgeItem.ConnectedEdgeItem;
-
-			boardEdge.GetOccupyingItem().Destroy();
-
-			if (connectedEdgeItem != null)
-			{
-				BoardEdge connectedBoardEdge = Board.GetEdgeByCoordinate(boardEdgeItem.Coordinate);
-				connectedBoardEdge.SetOccupyingItem(null);
-			}
-		}
-
 		Direction wallDirection = Util.GetOppositeDirection(edgeCoordinate.Direction);
 		if (wallDirection == Direction.Up || wallDirection == Direction.Down)
 		{
